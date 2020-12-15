@@ -99,6 +99,31 @@ alert(analyzeColor(useColor));
  * return value.
  */
 
+var calculateTotal = function (luckyNumber, totalAmount){
+    switch(luckyNumber) {
+        case 1:
+            return (totalAmount - (totalAmount * .1).toFixed(2));
+        case 2:
+            return (totalAmount - (totalAmount * .25).toFixed(2));
+        case 3:
+            return (totalAmount - (totalAmount * .35).toFixed(2));
+        case 4:
+            return (totalAmount - (totalAmount * .5).toFixed(2));
+        case 5:
+            return 0;
+        default:
+            return (totalAmount.toFixed(2));
+    }
+}
+
+console.log(calculateTotal(0, 100));
+console.log(calculateTotal(1, 100));
+console.log(calculateTotal(2, 100));
+console.log(calculateTotal(3, 100));
+console.log(calculateTotal(4, 100));
+console.log(calculateTotal(5, 100));
+
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -106,8 +131,16 @@ alert(analyzeColor(useColor));
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+//Generate a random number between 0 and 6
+var luckyNumber = Math.floor(Math.random() * 6);
+
+var totalBill = parseFloat(prompt("Enter Total Bill:"));
+alert('Your lucky number is ' + luckyNumber);
+alert('Your price before discount is: ' + totalBill);
+
+var totalAfterDiscount = calculateTotal(luckyNumber, totalBill);
+alert("Your price after discount is: " + totalAfterDiscount);
+
 
 /**
  * TODO:
