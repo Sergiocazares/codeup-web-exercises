@@ -111,3 +111,12 @@ alert("You should tip $" + calculateTip(tipamount, billtotal) + " today. Come ag
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
+function applyDiscount (x , y) {
+    var price = x;
+    var percentageOff = y;
+    var discountPrice = price - (price * percentageOff);
+    return discountPrice;
+}
+
+console.log(applyDiscount(45.99, .12));
+console.log(applyDiscount(60, .2));
