@@ -57,6 +57,13 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
+function isTwo(num) {
+    return num === 2;
+}
+
+console.log(random);
+console.log(isTwo(random));
+
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
