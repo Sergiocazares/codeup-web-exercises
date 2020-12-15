@@ -20,6 +20,18 @@
  * console.logging the function's return value
  */
 
+function analyzeColor(color) {
+    if (color === "blue") {
+        return "blue is the color of facebook logo"
+    } else if (color === "red") {
+        return  "red is the color of youtube logo"
+    } else if (color === "cyan") {
+        return "I dont know any logo with color cyan"
+    } else {
+        return "I dont know what " + color + " is."
+    }
+}
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -33,10 +45,27 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
+console.log(analyzeColor(randomColor));
+
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+
+let color = randomColor;
+switch (color) {
+    case 'blue':
+        console.log("blue is the color of facebook logo.");
+        break;
+    case 'red':
+        console.log("red is the color of youtube logo");
+        break;
+    case 'yellow':
+        console.log("yellow is the color of snapchat logo");
+        break;
+    default:
+        console.log("I dont know anything about that color: " + color);
+}
 
 /**
  * TODO:
@@ -44,6 +73,9 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+var useColor = prompt("Enter your color: ");
+alert(analyzeColor(useColor));
 
 /* ########################################################################## */
 
