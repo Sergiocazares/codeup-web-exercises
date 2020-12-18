@@ -99,7 +99,7 @@ alert(analyzeColor(useColor));
  * return value.
  */
 
-var calculateTotal = function (luckyNumber, totalAmount){
+function calculateTotal(luckyNumber, totalAmount){
     switch(luckyNumber) {
         case 1:
             return (totalAmount - (totalAmount * .1).toFixed(2));
@@ -164,8 +164,7 @@ if (confirmNumberInput) {
     var confirmNumberInput = +prompt("Enter a number: ");
     if (isNaN(confirmNumberInput)) {
         alert("You did not enter a number.");
-    }
-    else {
+    } else {
         (confirmNumberInput % 2 === 0) ? alert("You entered an even number") : alert("You entered an odd number");
         (confirmNumberInput >= 0) ? alert("You entered a positive number") : alert("You entered a negative number");
         alert("The number you entered plus 100 is equal " + (confirmNumberInput + 100));
