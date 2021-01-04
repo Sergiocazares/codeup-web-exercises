@@ -43,6 +43,10 @@
      * Refactor your above code to use a `forEach` loop
      */
 
+    names.forEach(function(name) {
+        console.log(name);
+    })
+
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
@@ -56,5 +60,19 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
+
+    var numbers = [1, 2, 3, 4, 5];
+    function first(array) {
+        console.log('returns the first item in the array: ' + array[0])
+    }
+    function second(array) {
+        console.log('returns the second item in the array: ' + array[1])
+    }
+    function last(array) {
+        console.log('returns the last item in the array: ' + array[(array.length - 1)])
+    }
+    first(numbers);
+    second(numbers);
+    last(numbers);
 
 })();
