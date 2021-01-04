@@ -7,17 +7,23 @@
      * 'names'.
      */
 
+    var names = ['Mario', 'Luigi', 'Waluigi', 'Wario']
+
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
      * array.
      */
 
+    console.log(names)
+
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
+
+
 
     /**
      * TODO:
