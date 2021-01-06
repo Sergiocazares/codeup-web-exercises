@@ -48,11 +48,19 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    shoppers.forEach(function (item) {
+        if (item.amount < 200) {
+            console.log(item.name + ': Original Cost: $' + item.amount + ' Amount after promo: $' + item.amount + '. Price below $200, did not meet Promo Expectations');
+        } else {
+            console.log(item.name + ': Original Cost: $' + item.amount + ' Amount after Promo: $' + (item.amount * .88));
+        }
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
