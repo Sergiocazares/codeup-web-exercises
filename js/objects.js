@@ -75,6 +75,48 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books = [
+        {
+            title: 'The Salmon of Doubt',
+            author: {
+                firstName: 'Douglas',
+                lastName: 'Adams',
+            }
+        },
+        {
+            title: 'Harry Potter',
+            author: {
+                firstName: 'J.K',
+                lastName: 'Rowlings',
+            }
+        },
+        {
+            title: 'Rewind',
+            author: {
+                firstName: 'William',
+                lastName: 'Sleator',
+            }
+        },
+        {
+            title: 'The Outsiders',
+            author: {
+                firstName: 'S.E',
+                lastName: 'Hinton',
+            }
+        },
+        {
+            title: '1984',
+            author: {
+                firstName: 'George',
+                lastName: 'Orwell',
+            }
+        },
+    ];
+
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -99,6 +141,15 @@
      *      ---
      *      ...
      */
+
+    books.forEach(function (book) {
+        var index = books.indexOf(book);
+        var authorName = book.author.firstName + ' ' +  book.author.lastName;
+        console.log('Book # ' + (index+1));
+        console.log('Title: ' + book.title);
+        console.log('Author: ' + authorName);
+        console.log('---')
+    });
 
     /**
      * Bonus:
