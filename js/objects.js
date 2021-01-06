@@ -162,4 +162,22 @@
      *   `showBookInfo` function.
      */
 
+    function createBook(aTitle, authorName) {
+        var names = authorName.split(" ");
+        return {
+            title: aTitle,
+            author: {
+                firstName: names[0],
+                lastName: names[1],
+            }
+        };
+    }
+
+    console.log(createBook("Unbroken", "Laura Hillenbrand"));
+
+    function showBookInfo(book) {
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+
+    }
 })();
