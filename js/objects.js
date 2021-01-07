@@ -162,22 +162,25 @@
      *   `showBookInfo` function.
      */
 
-    function createBook(aTitle, authorName) {
-        var names = authorName.split(" ");
-        return {
-            title: aTitle,
-            author: {
-                firstName: names[0],
-                lastName: names[1],
-            }
-        };
+    function createBook (titleofbook, authorname) {
+        var bookvalue = {
+            title: titleofbook,
+            author: authorname
+        }
+        return bookvalue;
     }
 
-    console.log(createBook("Unbroken", "Laura Hillenbrand"));
 
-    function showBookInfo(book) {
-        console.log("Title: " + book.title);
-        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
 
+    var books = [createBook("Cat's Cradle", "Kurt Vonnegut"), createBook("Raise High The Roof Beam, Carpenters", "J.D. Salinger"), createBook("On Writing", "Stephen King"), createBook("The North China Lover", "Margurite Duras"), createBook("Meditations", "Marcus Aurelius")]
+
+    function showBookInfo(obj){
+        return  "\"" + obj.title + "\" is the title of this book, and it was written by " + obj.author
     }
+
+    // console.log(showBookInfo(books[0]));
+
+    books.forEach(function (book) {
+        console.log(showBookInfo(book));
+    })
 })();
