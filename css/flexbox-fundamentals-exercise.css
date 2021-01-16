@@ -1,4 +1,6 @@
-* {box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -7,7 +9,9 @@ body {
     font-family: Chalkboard, sans-serif;
 }
 
-h1 {text-align: center;}
+h1 {
+    text-align: center;
+}
 
 h2, h3 {
     padding: 0;
@@ -25,7 +29,9 @@ h2, h3 {
     width: 2em;
 }
 
-.border {border: 2px solid black;}
+.border {
+    border: 2px solid black;
+}
 
 .card {
     width: 400px;
@@ -33,20 +39,28 @@ h2, h3 {
     background: white;
     padding: 1em;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     /* enter needed declarations here */
 }
 
 section {
+    display: flex;
     /* enter needed declarations here */
 }
 
 section:nth-of-type(1) {
     height: 3em;
     background: lightgreen;
+    align-items: center;
+    justify-content: space-between;
     /* enter needed declarations here */
 }
+
 section:nth-of-type(1) div:last-child {
     /* enter needed declarations here */
+    align-self: flex-start;
 }
 
 .purple-box {
@@ -57,10 +71,12 @@ section:nth-of-type(1) div:last-child {
 
 .purple-box:nth-of-type(1) {
     /* enter needed declarations here */
+    flex-basis: 15em;
 }
 
 .purple-box:nth-of-type(2) {
     /* enter needed declarations here */
+    flex-basis: 10em;
 }
 
 .blue-box {
@@ -71,11 +87,13 @@ section:nth-of-type(1) div:last-child {
 
 section:nth-of-type(3) {
     /* enter needed declarations here */
+    /*line-height: 48px;*/
+    align-items: center
 }
 
 section:nth-of-type(3) h3 {
+    flex-basis: 15em;
     /* enter needed declarations here */
-
 }
 
 .orange-circle {
@@ -90,6 +108,7 @@ section:nth-of-type(3) h3 {
     height: 5em;
     width: 5em;
     background: brown;
+    flex-grow: 1
     /* enter needed declarations here */
 }
 
@@ -98,6 +117,7 @@ section:nth-of-type(3) h3 {
 }
 
 section:nth-of-type(5) {
+    justify-content: space-evenly;
     /* enter needed declarations here */
 }
 
@@ -110,6 +130,10 @@ section:nth-of-type(5) {
 section:nth-of-type(6) {
     background: coral;
     height: 14em;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     /* enter needed declarations here */
 }
 
