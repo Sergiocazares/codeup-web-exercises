@@ -32,6 +32,9 @@ body {
     position: relative;
     border: 20px solid rgba(0, 0, 0, 0.3);
     border-radius: 5px;
+    margin: auto;
+    display: flex;
+    background-color: #FFFFFF;
     /* TODO: Add an automatic margin and a flex container to this selector */
 }
 
