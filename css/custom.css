@@ -7,6 +7,6 @@ h1{
 }
 
 .jumbotron {
-    background-image: url("/Users/sergiomuniz/IdeaProjects/codeup-web-exercises2/img/pizza.png");
+    background-image: url("../img/pizza.png");
     background-size: cover;
 }

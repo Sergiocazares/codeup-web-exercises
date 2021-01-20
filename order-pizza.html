@@ -40,6 +40,8 @@
     </div>
 </nav>
 
+<div class="container">
+
 <!--JUMBOTRON-->
 <div class="jumbotron d-none d-lg-block px-0">
     <div class="container px-0">
@@ -47,8 +49,95 @@
     </div>
 </div>
 
+<!--ORDERING TABS-->
+<h2>Build Your Own Pizza!</h2>
+<ul class="nav nav-tabs" id="nav-tab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="crust-tab" data-toggle="tab" href="#crust" role="tab" aria-controls="crust" aria-selected="true"><span class="badge badge-pill badge-secondary">1</span> Size and Crust</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="cheese-tab" data-toggle="tab" href="#cheese" role="tab" aria-controls="cheese" aria-selected="true"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="toppings-tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="toppings" aria-selected="true"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
+    </li>
+</ul>
 
-<div class="container">
+<div class="tab-content" id="myTabContent">
+
+    <!-- CRUST TAB START -->
+    <div class="tab-pane fade show active" id="crust" role="tabpanel" aria-labelledby="crust-tab">
+
+        <div class="card">
+            <h6 class="card-header bg-primary text-white border-secondary">Choose size and crust</h6>
+            <div class="card-body border-secondary">
+
+                <!-- HAND TOSSED CRUST -->
+                <div class="card">
+                    <div class="card-header">
+                        Hand-Tossed
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pizza-size" id="small-pizza-hand-tossed" value="small-pizza-hand-tossed">
+                                <label class="form-check-label" for="small-pizza-hand-tossed">
+                                    Small (10")
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pizza-size" id="medium-pizza-hand-tossed" value="medium-pizza-hand-tossed">
+                                <label class="form-check-label" for="medium-pizza-hand-tossed">
+                                    Medium (12")
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <br>
+
+                <!-- CRISPY THIN CRUST-->
+                <div class="card">
+                    <div class="card-header">
+                        Crispy Thin
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pizza-size" id="medium-pizza-crispy-thin" value="medium-pizza-crispy-thin">
+                                <label class="form-check-label" for="medium-pizza-crispy-thin">
+                                    Medium (12")
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pizza-size" id="large-pizza-crispy-thin" value="large-pizza-crispy-thin">
+                                <label class="form-check-label" for="large-pizza-crispy-thin">
+                                    Large (14")
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="card-footer"> <!-- NEXT BUTTON -->
+                <a href="#" class="btn btn-primary float-right">Next Step ></a>
+            </div>
+        </div>
+
+    </div> <!-- CRUST TAB END -->
+
+
+
+
+
 
 </body>
 </html>
