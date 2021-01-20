@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.45);
+    color: #4c4c4c;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.jumbotron {
+    background-image: url("/Users/sergiomuniz/IdeaProjects/codeup-web-exercises2/img/pizza.png");
+    background-size: cover;
+}
