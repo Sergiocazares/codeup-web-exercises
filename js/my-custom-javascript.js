@@ -1,3 +1,5 @@
+'use strict'
+
 $(document).ready(function (){
     // var idContents = $('#container').html();
     // alert(idContents);
