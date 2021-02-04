@@ -1,23 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-<!DOCTYPE html>
 <html>
 <head>
     <title>Konami Code</title>
+
+    <style>
+
+        html {
+            background-image: url("img/ddr-png.png");
+            background-color: #d3d3d3;
+        }
+
+        .cheatcode {
+            color: red;
+        }
+
+        #main-header {
+            font-size: 2em;
+            position: absolute;
+            left: calc(50% - 200px);
+            top: calc(50% - 90px);
+        }
+    </style>
 </head>
 <body>
-<h1>Konami Code</h1>
+<div id="main-header">
+    <h1 id="konami" style="text-align: center">
+        <code>K</code>
+        <code>o</code>
+        <code>n</code>
+        <code>a</code>
+        <code>m</code>
+        <code>i</code>
+        <code>C</code>
+        <code>o</code>
+        <code>d</code>
+        <code>e</code>
+    </h1>
+</div>
 
-<script src="/js/jquery-3.5.1.js"></script>
 
-</body>
-</html>
-
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/konami.js"></script>
 </body>
 </html>
