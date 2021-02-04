@@ -2,46 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>jQuery FAQ</title>
     <link rel="stylesheet" href="css/jquery_faq.css">
 </head>
 <body>
 <main>
+    <h1>National Parks: Frequently Asked Questions</h1>
+
     <dl>
-        <dt>How old is the National Park System?</dt>
-        <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. </dd>
-
-        <dt>What is the oldest U.S. national park in the system?</dt>
-        <dd>Yellowstone National Park (in Wyoming, Idaho, and Montana) is the oldest U.S. national park, founded in 1872.</dd>
-
-        <dt>What is the largest national park in the system?</dt>
-        <dd>Wrangell-St. Elias National Park, Alaska, is the largest national park, covering 13,000 square miles or 13.2 million acres.</dd>
-
-        <dt>What is the largest national park in the lower 48?</dt>
-        <dd>Death Valley National Park is the largest national park in the lower 48 U.S. states, stretching 5,300 square miles or 3.4 million acres.</dd>
-
-        <dt>What is the smallest national park in the system?</dt>
-        <dd>The smallest national park is Hot Springs National Park in Arkansas, coming in at about 5,500 acres. This was actually the first federally protected piece of land in 1832. It was not named a national park until 1921. </dd>
-
-        <dt>What park gets the most visitors?</dt>
-        <dd>Great Smoky Mountains National Park is the most visited national park with more than 9 million guests per year, followed by Grand Canyon National Park, which gets more than 4 million visits per year.</dd>
-
-        <dt>What park gets the least visitors?</dt>
-        <dd>Alaska is home to one of the least visited national parks: Kobuk Valley National Park receives just 3,000 visitors per year.</dd>
-
-        <dt>Are the parks just open wilderness and forests?</dt>
-        <dd>Not so - for example, national parks are home to a former federal prison, Alcatraz in Golden Gate National Recreation Area, California, and a leper colony, Molokai Island Hansen's Disease Settlement in Kalaupapa National Historic Site, Hawaii.</dd>
-
-        <dt>Is there a park located in every state?</dt>
-        <dd>Only one state in the country is not lucky enough to currently have either a national park or national monument. It is actually the country’s first state, Delaware. </dd>
-
-        <dt>What is the most remote park in the system?</dt>
-        <dd>Located 70 miles from Key West in the Gulf of Mexico, Dry Tortugas National Park is a collection of seven tiny islands that can be reached only by boat or plane, making it the country's most remote national park.</dd>
+        <dt>Where is Yellowstone?</dt>
+        <dd class="invisible">Wyoming</dd>
+        <dt>Where is Acadia?</dt>
+        <dd class="invisible">Maine</dd>
+        <dt>Where is Arches?</dt>
+        <dd class="invisible">Utah</dd>
+        <dt>Where is Badlands?</dt>
+        <dd class="invisible">South Dakota</dd>
+        <dt>Where is Big Bend?</dt>
+        <dd class="invisible">Texas</dd>
+        <dt>Where is Carlsbad Caverns?</dt>
+        <dd class="invisible">New Mexico</dd>
+        <dt>Where is Congaree?</dt>
+        <dd class="invisible">South Carolina</dd>
+        <dt>Where is Crater Lake?</dt>
+        <dd class="invisible">Oregon</dd>
+        <dt>Where is Death Valley?</dt>
+        <dd class="invisible">California</dd>
+        <dt>Where is Denali?</dt>
+        <dd class="invisible">Alaska</dd>
     </dl>
 
     <button id="styletime">Visibility</button>
+
+
+    <div id="national-parks">
+        <h3 id="toggle1">Yellowstone</h3>
+        <ul>
+            <li>Yellowstone National Park covers a total area of 2,219,799 acres</li>
+            <li>Yellowstone was made a national park on March 1, 1872</li>
+            <li>The lowest elevation found in Yellowstone is 5,282 feet at Gardner River</li>
+            <li>The highest elevation found in Yellowstone is 11,358 feet on Eagle Peak</li>
+        </ul>
+
+        <h3 id="toggle2">Acadia</h3>
+        <ul>
+            <li>Acadia National Park covers a total area of 47,633 acres</li>
+            <li>Acadia was made a national park on February 26, 1919</li>
+            <li>The lowest elevation found in Acadia is 0 feet at the Atlantic Ocean</li>
+            <li>The highest elevation found in Acadia is 1,530 feet on Cadillac Mountain</li>
+        </ul>
+
+        <h3 id="toggle3">Arches</h3>
+        <ul>
+            <li>Arches National Park covers a total area of 76,359 acres</li>
+            <li>Arches was made a national park on November 12, 1971</li>
+            <li>The lowest elevation found in Arches is 3,960 feet at the Colorado River</li>
+            <li>The highest elevation found in Arches is 5,653 feet at Elephant Butte</li>
+        </ul>
+
+        <h3 id="toggle4">Badlands</h3>
+        <ul>
+            <li>Badlands National Park covers a total area of 244,300 acres</li>
+            <li>Badlands was made a national park on November 10, 1978</li>
+            <li>The lowest elevation found in Badlands is 2,365 feet near the Visitor Center</li>
+            <li>The highest elevation found in Badlands is 3,340 feet at Red Shirt Table</li>
+        </ul>
+
+        <h3 id="toggle5">Big Bend</h3>
+        <ul>
+            <li>Big Bend National Park covers a total area of 801,163 acres</li>
+            <li>Big Bend was made a national park on June 20, 1935</li>
+            <li>The lowest elevation found in Big Bend is 1,715 feet at the Rio Grande River</li>
+        </ul>
+
+        <h3 id="toggle6">Carlsbad Caverns</h3>
+        <ul>
+            <li>Carlsbad Caverns National Park covers a total area of 46,766 acres</li>
+            <li>Carlsbad Caverns was made a national park on May 14, 1930</li>
+            <li>The lowest elevation found in Carlsbad Caverns is 3,596 feet at Black River</li>
+            <li>The highest elevation found in Carlsbad Caverns is 6,535 feet on Guadalupe Ridge</li>
+        </ul>
+
+        <h3 id="toggle7">Congaree</h3>
+        <ul>
+            <li>Congaree National Park covers a total area of 22,200 acres</li>
+            <li>Congaree was made a national park on November 10, 2003</li>
+            <li>The lowest elevation found in Congaree is 80 feet at Congaree River</li>
+            <li>The highest elevation found in Congaree is 140 feet on Old Bluff Road</li>
+        </ul>
+
+        <h3 id="toggle8">Crater Lake</h3>
+        <ul>
+            <li>Crater Lake National Park covers a total area of 183,224 acres</li>
+            <li>Crater Lake was made a national park on May 22, 1902</li>
+            <li>The lowest elevation found in Crater Lake is 3,990 feet in southwest corner</li>
+            <li>The highest elevation found in Crater Lake is 8,929 feet on Mount Scott</li>
+        </ul>
+
+        <h3 id="toggle9">Death Valley</h3>
+        <ul>
+            <li>Death Valley National Park covers a total area of 3,367,627 acres</li>
+            <li>Death Valley was made a national park on October 31, 1994</li>
+            <li>The lowest elevation found in Death Valley is -282 feet at Badwater</li>
+            <li>The highest elevation found in Death Valley is 11,049 feet at Telescope Peak</li>
+        </ul>
+
+        <h3 id="toggle10">Denali</h3>
+        <ul>
+            <li>Denali National Park covers a total area of 6,075,106 acres</li>
+            <li>Denali was made a national park on February 26, 1917</li>
+            <li>The lowest elevation found in Denali is 240 feet at Yentna River</li>
+            <li>The highest elevation found in Denali is 20,320 feet on Mount McKinley</li>
+        </ul>
+
+    <button id="styleUs">Style Us!</button>
 </main>
 <script src="js/jquery-3.5.1.js"></script>
 <script src="js/jquery_faq.js"></script>
 </body>
-</html> 
+</html>

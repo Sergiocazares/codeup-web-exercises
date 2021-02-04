@@ -1,3 +1,9 @@
 .invisible {
     visibility: hidden;
 }
+ul {
+    display:none;
+}
+h2 {
+    display: none;
+}
