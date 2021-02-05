@@ -14,7 +14,7 @@ $(document).ready(function () {
     });
 
     $("h3").click(function () {
-        $(this).next().children().css("font-weight", "bold");
+        $(this).next().children().css("font-weight", "italic");
     });
 
 //When any list item is clicked, first li of the parent ul should have a font color of blue.
@@ -30,7 +30,5 @@ $(document).ready(function () {
     $("h3").click(function(){
         $(this).next().slideToggle();
     });
-
-    $("h2").delay(8000).fadeIn(2000);
 
 });
