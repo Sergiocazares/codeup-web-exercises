@@ -1,99 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
     <title>Online Store</title>
 </head>
 <body>
+<div class="container-fluid" id="main-container">
+    <div class="jumbotron jumbotron-fluid bg-info" id="jumbo-title">
+        <h1 class="display-4 text-center text-white">My Tool Store</h1>
+    </div>
+    <div class="container">
+        <table id="products" class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Categories</th>
+            </tr>
+            </thead>
+            <tbody id="insertProducts"></tbody>
+        </table>
+    </div>
 
-<div class="container text-center">
-    <h1 class="mt-5">My Tool Store</h1>
-    <div id="refreshInventory" class="btn btn-primary my-3">Refresh</div>
-    <table id="products" class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Price</th>
-            <th scope="col">Categories</th>
-        </tr>
-        </thead>
-        <tbody id="insertProducts"></tbody>
-    </table>
+    <br>
+    <div class="container-fluid d-flex justify-content-center">
+        <button id="refresh-btn" class="btn btn-lg btn-info">Refresh Inventory</button>
+    </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 <script>
-
     (function() {
         "use strict";
         // TODO: Create an AJAX GET request for the file under data/inventory.json
-        const loadingScreen = `
-        <div class="d-flex justify-content-center">
-            <div class="spinner-border text-dark text-center" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-    `;
+        let storeURL = "data/inventory.json"
+        let tableBody = $("#insertProducts");
 
-        const loadInventory = ()=>{
-            $.ajax("data/inventory.json")
-                .done(function (data,status,jqXhr) {
-                    data.forEach((item,index)=>{
-                        $('#insertProducts').append( `
-                        <tr>
-                            <th scope="row">${index+1}</th>
-                            <td>${item.title}</td>
-                            <td>${item.quantity}</td>
-                            <td>$${item.price}</td>
-                            <td>${item.categories}</td>
-                        </tr>
-                    `);
-                    })
-                })
-                .fail(function () {
-                    $('#insertProducts').html(
-                        "<tr>" +
-                        "<td colspan='5' class='font-weight-bold text-warning'>" +
-                        "Internal Request Error" +
-                        "</td>" +
-                        "</tr>"
-                    )
-                })
-            ;
-        }
-
-        loadInventory();
-
-        $("#refreshInventory").click(function (){
-            $('#insertProducts').html(
-                "<tr>" +
-                "<td colspan='5'>" +
-                loadingScreen +
-                "</td>" +
-                "</tr>"
-            );
-            setTimeout(()=> {
-                $('#insertProducts').empty();
-                loadInventory();
-            },500)
-        });
 
         // TODO: Take the data from inventory.json and append it to the products table
         //       HINT: Your data should come back as a JSON object; use console.log() to inspect
         //             its contents and fields
         //       HINT: You will want to target #insertProducts for your new HTML elements
+
+        function getData(){
+            let storeData = $.get(storeURL);
+            tableBody.html("");
+            storeData.done(function(data){
+                data.forEach(function(element){
+                    let tbodyHTML = "";
+
+                    tbodyHTML += "<tr scope='row'>"
+                    tbodyHTML += "<td>"+element.title+"</td>"
+                    tbodyHTML += "<td>"+element.quantity+"</td>"
+                    tbodyHTML += "<td>"+element.price+"</td>"
+                    tbodyHTML += "<td>["+element.categories.join(", ")+"]</td>"
+                    tbodyHTML += "</tr>"
+
+                    tableBody.append(tbodyHTML);
+                })
+            })
+        }
+
+        getData();
+
+        $("#refresh-btn").click(getData);
+
     })();
 </script>
-
 </body>
 </html>
