@@ -2,9 +2,156 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Mapbox API</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
 
+<h3 style="font-family: Arial, Ubuntu, sans-serif">Click on the markers to reveal information!</h3>
+<div id='map' style='width: 600px; height: 500px;'></div><script src="js/keys.js"></script>
+<br>
+
+<button id="zoomInput5">5x</button>
+<button id="zoomInput10">10x</button>
+<button id="zoomInput20">20x</button>
+
+<br>
+
+<script src="js/mapbox-geocoders-util.js"></script>
+
+<script>
+
+    mapboxgl.accessToken = mapBoxToken;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+        center: [-96.8084, 27.7799], // starting position [lng, lat]
+        zoom: 6,  // starting zoom
+    });
+
+
+    let restaurants = {
+        "data": [
+            {
+                searchStr: " 3771 Belt Line Rd, Addison, TX 75001",
+                name: "Chipotle",
+                favorites: [
+                    "Chicken Burrito",
+                    "Chicken Bowl",
+                    "Quesarito",
+                ]
+            },
+            {
+                searchStr: "2619 McKinney Ave Suite 150, Dallas, TX 75204",
+                name: "Fogo de Chão Brazilian Steakhouse",
+                favorites: [
+                    "THE FOGO® CHURRASCO EXPERIENCE",
+                    "Wagyu Ancho (Ribeye)",
+                    "Filet Mignon",
+                ]
+            },
+            {
+                searchStr: "5100 Belt Line Rd Suite 502, Dallas, TX 75254",
+                name: "Hopdoddy Burger Bar",
+                favorites: [
+                    "The Classic Burger",
+                    "Parmesan Truffle Fries",
+                ]
+            },
+            {
+                searchStr: "2625 Old Denton Rd #800, Carrollton, TX 75007",
+                name: "Ari Korean BBQ",
+                favorites: [
+                    "BEEF BBQ",
+                ]
+            }
+
+        ],
+        "getCoordinatesAndUpdate": function() {
+
+            let self = this;
+            let data = this.data;
+            let count = 0;
+
+            self.coordinates = [];
+            self.sumLng = 0;
+            self.sumLat = 0;
+
+            for (let i = 0; i < data.length; i++) {
+
+                let obj = data[i];
+
+                geocode(obj.searchStr, mapBoxToken)
+                    .then(function(result) {
+                        count++;
+                        return result;
+                    })
+                    .then(function(arr) {
+                        self.coordinates.push(arr);
+                        obj.lng = arr[0];
+                        obj.lat = arr[1];
+
+                        return (count === data.length);
+                    })
+                    .then(function(end) {
+
+                        let popup = new mapboxgl.Popup()
+                            .setLngLat([obj.lng, obj.lat])
+                            .setHTML(function(){
+
+                                let HTML = "<span style='font-size: 20px'><strong>" + obj.name + "</span></strong>" +
+                                    "<br><br><span style='font-size: 16px'>Favorites:</span><br><ul>";
+
+                                for (let fav of obj.favorites) {
+                                    HTML += "<li>" + fav + "</li>";
+                                }
+                                HTML += "</ul>";
+
+                                return HTML;
+                            }());
+
+                        var marker = new mapboxgl.Marker()
+                            .setLngLat([obj.lng, obj.lat])
+                            .setPopup(popup)
+                            .addTo(map);
+
+                        if (end) {
+
+                            for (let lngLat of self.coordinates) {
+                                self.sumLng += lngLat[0];
+                                self.sumLat += lngLat[1];
+                            }
+
+                            self.avgLng = self.sumLng / data.length;
+                            self.avgLat = self.sumLat / data.length;
+
+                            setTimeout(function(){
+                                map.flyTo({ center: [self.avgLng, self.avgLat], zoom: 9 })
+                            }, 500);
+
+                        }
+                    });
+            }
+        },
+    }
+
+    restaurants.getCoordinatesAndUpdate();
+
+    document.getElementById("zoomInput5").addEventListener("click", function (event) {
+        map.zoomTo(5);
+    })
+
+    document.getElementById("zoomInput10").addEventListener("click", function (event) {
+        map.zoomTo(10);
+    })
+
+    document.getElementById("zoomInput20").addEventListener("click", function (event) {
+        map.setCenter([-96.801950, 32.797050])
+        map.zoomTo(20);
+    })
+
+</script>
 </body>
 </html>
