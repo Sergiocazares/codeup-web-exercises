@@ -15,7 +15,33 @@
 </head>
 <body>
 
-
+<!--Start of the weather container-->
+<div class="container">
+    <div class="card weather-card box-shadow-custom">
+        <div class="card-body pb-3">
+            <!-- search bar -->
+            <div class="input-group box-shadow-custom">
+                <input id="userInput" class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button id="userSubmit" class="btn btn-dark" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Map -->
+            <div class="mx-auto box-shadow-custom" id='map'></div>
+            <div class="current-container p-3">
+                <!-- current content goes here -->
+            </div>
+            <div class="forecast-container card-group d-inline-flex">
+                <!-- forecast content goes here -->
+            </div>
+            <hr>
+            <!-- expands the forecast container -->
+            <button class="btn collapse-button btn-dark mb-5 box-shadow-custom">5-Day Forecast</button>
+        </div>
+    </div>
+</div>
 
 
 

@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color:grey;
+    color: #343b40
+}
+
+.box-shadow-custom {
+    box-shadow: 5px 10px 23px -5px rgba(102,96,99,1);
+}
+
+.container {
+    margin-top: 1em;
+    width: 100%;
+    text-align: center;
+}
+
+#map {
+    width:250px;
+    height: 250px;
+    border: white solid 4px;
+    margin-top: 2em;
+}
+
+.current-container {
+    margin-top: 1em;
+    text-shadow: 3px 1px 7px rgba(150, 155, 150, 1);
+}
+
